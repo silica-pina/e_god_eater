@@ -1,4 +1,5 @@
 import random as rd
+import matplotlib.pyplot as plt
 
 #rushセット数を決める 
 #戻り値 セット数
@@ -60,7 +61,19 @@ for i in range(10):
     res.append([n,out])#結果
 
 #結果表示
+data = []
+p = 15 #１回転あたりの消費量
+now = 0 #差玉
 print("[回転数, 出玉]")
 for i in res:
+    now -= i[0]*p
+    data.append(now)
+
+    now += i[1]
+    data.append(now)
+
     print(i)
+
+plt.plot(data)
+plt.show()
 
