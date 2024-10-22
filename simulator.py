@@ -9,17 +9,17 @@ def set():
     D = 1
     flg = 0
     while(True):
-        r = rd.randint(1,100)
-        if r <= 16:
+        r = rd.randint(1,1000)
+        if r <= 228:
             A -= 1
             flg += 1
-        elif r <= 32:
+        elif r <= 456:
             B -= 1
             flg += 1
-        elif r <= 48:
+        elif r <= 548:
             C -= 0
             flg += 1
-        elif r <= 64:
+        elif r <= 640:
             D -= 1
             flg += 1
         else:#通常
@@ -52,10 +52,9 @@ for i in range(10):
     n = 0   #回転数
     out = 1500 #出玉
     while(True):
-        r = rd.randint(1,539)
+        r = rd.randint(1,5392)
         n += 1
-        if r == 1: #当たり
-            r = rd.randint(1,100)
+        if r <= 10: #当たり
             out += rush(set()) #ラッシュ中の出玉加算
             break
     res.append([n,out])#結果
